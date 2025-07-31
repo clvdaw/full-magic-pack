@@ -2393,6 +2393,7 @@ keyword:
 	reminder: È un artefatto con "<sym-auto>T</sym-auto>, Sacrifica questo artefatto: Esilia la prima carta del tuo grimorio. Puoi giocare quella carta in questo turno. Attiva solo come una stregoneria".
 	#example: Commander Sofia Daguerre
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 # Outlaws of Thunder Junction
 keyword:
@@ -2634,5 +2635,7 @@ keyword:
 	match: Livelli
 	mode: expert
 	reminder: Scegli un costo addizionale.
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
