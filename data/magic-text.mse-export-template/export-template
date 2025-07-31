@@ -1,7 +1,7 @@
 mse version: 0.3.8
 short name: Text
 full name: Raw list data
-position hint: 400
+position hint: 002
 icon: icon.png
 version: 2009-06-29
 installer group: magic/Export/text

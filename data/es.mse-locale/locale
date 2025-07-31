@@ -592,7 +592,6 @@ label:
 	installer size:						Tamaño:
 	installer status:					Estado:
 	no version:							-
-	put space between cards:			Put space between cards?
 
 ############################################################## Buttons/checkboxes/choices in the GUI
 button:
@@ -717,7 +716,6 @@ title:
 	custom pack:						Mazo personalizado
 	# print
 	print preview:						Vista previa de impresión
-	settings:							Settings
 	# export
 	export images:						Exportar imágenes
 	export cancelled:					Exportación cancelada

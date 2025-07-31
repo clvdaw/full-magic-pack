@@ -59,11 +59,6 @@ keyword parameter type:
 	optional: false
 
 keyword parameter type:
-	name: una_parola
-	match: [^(.,”":;\n— ]+
-	optional: false
-
-keyword parameter type:
 	name: nome
 	match: ([^(.:;\n—]+|[ ])
 	optional: true
@@ -171,7 +166,7 @@ keyword:
 	keyword: Indistruttibile
 	match: Indistruttibile
 	mode: core
-	reminder: Il danno e gli effetti che dicono "distruggi" non distruggono {if languages["Italiano"].is_creature(card.type) then "questa creatura" else "questo permanente"}.{if languages["Italiano"].is_creature(card.type) then " Se la sua costituzione è pari o inferiore a 0, viene comunque messa nel cimitero del suo proprietario." else ""}
+	reminder: Il danno e gli effetti che dicono "distruggi" non distruggono {if languages["Italiano"].is_creature(card.type) then "questa creatura" else "questo permanente"}.{if languages["Italiano"].is_creature(card.type) then " Se la sua costituzione è pari o inferiore a </sym-auto>0<sym-auto>, viene comunque messa nel cimitero del suo proprietario." else ""}
 	#example: Seraph of the Suns
 
 keyword:
@@ -531,7 +526,7 @@ keyword:
 	keyword: Muta-anima
 	match: Muta-anima <atom-param>numero</atom-param>
 	mode: expert
-	reminder: Quando questa viene messa in un cimitero dal gioco, puoi riprendere in mano una carta Spirito bersaglio con valore di mana pari o inferiore a {param1} presente nel tuo cimitero.
+	reminder: Quando questa viene messa in un cimitero dal gioco, puoi riprendere in mano una carta Spirito bersaglio con costo di mana convertito pari o inferiore a {param1} presente nel tuo cimitero.
 	#example: Thousand-legged Kami
 
 keyword:
@@ -627,7 +622,7 @@ keyword:
 	keyword: Trasmutare
 	match: Trasmutare <atom-param>costo</atom-param>
 	mode: expert
-	reminder: {param1}, Scarta questa carta: Passa in rassegna il tuo grimorio, scegli una carta con lo stesso valore di mana di questa carta, rivelala e aggiungila alla tua mano. Poi rimescola il tuo grimorio. Giocalo solo come una stregoneria.
+	reminder: {param1}, Scarta questa carta: Passa in rassegna il tuo grimorio, scegli una carta con lo stesso costo di mana convertito di questa carta, rivelala e aggiungila alla tua mano. Poi rimescola il tuo grimorio. Giocalo solo come una stregoneria.
 	#example: Clutch of the Undercity
 
 keyword:
@@ -763,7 +758,7 @@ keyword:
 	keyword: Trasfigurare
 	match: Trasfigurare <atom-param>costo</atom-param>
 	mode: expert
-	reminder: {param1}, Sacrifica questa creatura: Passa in rassegna il tuo grimorio per una carta creatura con lo stesso valore di mana di questa creatura e metti in gioco quella carta. Poi rimescola il tuo grimorio. Gioca questa abilità solo quando potresti giocare una stregoneria.
+	reminder: {param1}, Sacrifica questa creatura: Passa in rassegna il tuo grimorio per una carta creatura con lo stesso costo di mana convertito di questa creatura e metti in gioco quella carta. Poi rimescola il tuo grimorio. Gioca questa abilità solo quando potresti giocare una stregoneria.
 	#example: Fleshwrither
 
 keyword:
@@ -1171,16 +1166,8 @@ keyword:
 	keyword: Emergere
 	match: Emergere <atom-param>costo</atom-param>
 	mode: expert
-	reminder: Puoi lanciare questa magia sacrificando una creatura e pagando il costo di emergere meno il valore di mana di quella creatura.
+	reminder: Puoi lanciare questa magia sacrificando una creatura e pagando il costo di emergere meno il costo di mana convertito di quella creatura.
 	#example: It of the Horrid Swarm
-
-keyword:
-	#english keyword: Emerge
-	keyword: Emergere da
-	match: Emergere da <atom-param>una_parola</atom-param> <atom-param>una_parola</atom-param> <atom-param>costo</atom-param>
-	mode: expert
-	reminder: Puoi lanciare questa magia sacrificando {if starts_vowel(param2.value) then "un" else "une"} {param2} e pagando il costo di emergere meno il valore di mana di quell'{param2}.
-	#example: Crabomination
 
 keyword:
 	#english keyword: Escalate
@@ -1499,7 +1486,7 @@ keyword:
 	keyword: Famelico
 	match: Famelico
 	mode: expert
-	reminder: Questa creatura entra nel campo di battaglia con X segnalini +1/+1. Se X è pari o superiore a 5, pesca una carta quando entra.
+	reminder: Questa creatura entra nel campo di battaglia con X segnalini +1/+1. Se X è pari o superiore a </sym-auto>5<sym-auto>, pesca una carta quando entra.
 	#example: Broodlord
 
 keyword:
@@ -1615,19 +1602,11 @@ keyword:
 	#example: Spin into Myth
 
 keyword:
-	#english keyword: Scry
-	keyword: Profetizza
-	match: Profetizza <atom-param>numero</atom-param>
-	mode: action
-	reminder: {if param1.value == "1" then "Guarda la prima carta del tuo grimorio. Puoi mettere quella carta in fondo al tuo grimorio." else ("Guarda le prime {italian_number(param1)} carte del tuo grimorio, poi mettine un qualsiasi numero in fondo al tuo grimorio e le altre in cima in qualsiasi ordine.")}
-	#example: Prism Array
-
-keyword:
 	#english keyword: Clash
 	keyword: Scontrati
 	match: Scontrati
 	mode: action
-	reminder: Ogni giocatore che si scontra rivela la prima carta del suo grimorio, poi la mette in cima o in fondo. Un giocatore vince se la sua carta aveva un valore di mana maggiore.
+	reminder: Ogni giocatore che si scontra rivela la prima carta del suo grimorio, poi la mette in cima o in fondo. Un giocatore vince se la sua carta aveva un costo di mana convertito maggiore.
 	#example: Fistful of Force
 
 keyword:
@@ -1767,14 +1746,6 @@ keyword:
 	#example: Deadeye Tracker
 
 keyword:
-	#english keyword: Connives
-	keyword: complotta
-	match: complotta
-	mode: expert
-	reminder: Pesca una carta, poi scarta una carta. Se hai scartato una carta non terra, metti un segnalino +1/+1 su questa creatura.
-	#example: Hypnotic Grifter
-
-keyword:
 	#english keyword: Historic
 	keyword: storica
 	match: storica
@@ -1859,8 +1830,8 @@ keyword:
 	keyword: Impeto sanguinario
 	match: Impeto sanguinario
 	mode: pseudo
-	rules: [costo], Scarta questa carta: Una creatura attaccante bersaglio prende +{card.power}/+{card.toughness} fino alla fine del turno.
-	#example: Ghor-Clan Rampager
+	rules: 
+	#example: Rubblehulk
 
 keyword:
 	#english keyword: Channel
@@ -1931,8 +1902,8 @@ keyword:
 	keyword: Dominio
 	match: Dominio
 	mode: pseudo
-	rules: [effetto], dove X è pari al numero di tipi di terra base tra le terre che controlli.
-	#example: Territorial Kavu
+	rules: 
+	#example: Zar Ojanen, Scion of Efrava
 
 keyword:
 	#english keyword: Eminence
@@ -1963,16 +1934,16 @@ keyword:
 	keyword: Ferocia
 	match: Ferocia
 	mode: pseudo
-	rules: Se controlli una creatura con forza pari o superiore a 4, [effetto].
-	#example: Barrage of Boulders
+	rules: 
+	#example: Flamewake Phoenix
 
 keyword:
 	#english keyword: Formidable
 	keyword: Formidabile
 	match: Formidabile
 	mode: pseudo
-	rules: Se le creature che controlli hanno una forza totale pari o superiore a 8, [effetto].
-	#example: Sabertooth Outrider
+	rules: 
+	#example: Dragon-Scarred Bear
 
 #keyword:
 #	#english keyword: Gotcha
@@ -2043,8 +2014,8 @@ keyword:
 	keyword: Parentela
 	match: Parentela
 	mode: pseudo
-	rules: All'inizio del tuo mantenimento, puoi guardare la prima carta del tuo grimorio. Se condivide un tipo di creatura con CARDNAME, puoi rivelarla. Se lo fai, [effetto].
-	#example: Ink Dissolver
+	rules: 
+	#example: Nightshade Schemers
 
 keyword:
 	#english keyword: Landfall
@@ -2059,24 +2030,24 @@ keyword:
 	keyword: Tenente
 	match: Tenente
 	mode: pseudo
-	rules: Se controlli il tuo comandante, [effetto].
-	#example: Loyal Guardian
+	rules: 
+	#example: Angelic Field Marshal
 
 keyword:
 	#english keyword: Magecraft
 	keyword: Artemagica
 	match: Artemagica
 	mode: pseudo
-	rules: Ogniqualvolta lanci o copi una magia istantaneo o stregoneria, [effetto].
-	#example: Clever Lumimancer
+	rules: 
+	#example: Prismari Pledgemage
 
 keyword:
 	#english keyword: Metalcraft
 	keyword: Metallurgia
 	match: Metallurgia
 	mode: pseudo
-	rules: Se controlli tre o più artefatti, [effetto].
-	#example: Vedalken Infiltrator
+	rules: 
+	#example: Spire Serpent
 
 keyword:
 	#english keyword: Morbid
@@ -2115,8 +2086,8 @@ keyword:
 	keyword: Incursione
 	match: Incursione
 	mode: pseudo
-	rules: Se hai attaccato con una creatura in questo turno, [effetto].
-	#example: Admiral's Order
+	rules: 
+	#example: Raiders' Wake
 
 keyword:
 	#english keyword: Rally
@@ -2179,8 +2150,8 @@ keyword:
 	keyword: Crescita sotterranea
 	match: Crescita sotterranea
 	mode: pseudo
-	rules: [effetto], dove X è il numero di carte creatura nel tuo cimitero.
-	#example: Hatchery Spider
+	rules: 
+	#example: Mausoleum Secrets
 
 keyword:
 	#english keyword: Will of the council
@@ -2189,14 +2160,6 @@ keyword:
 	mode: pseudo
 	rules: 
 	#example: Plea for Power
-
-keyword:
-	#english keyword: Corrupted
-	keyword: Corrotto
-	match: Corrotto
-	mode: pseudo
-	rules: Se un avversario ha tre o più segnalini veleno, [effetto].
-	#example: Incisor Glider
 
 keyword:
 	#english keyword: Incubate
@@ -2359,140 +2322,12 @@ keyword:
 	#example: Fanatical Offering
 
 keyword:
-	#english keyword: Treasure tokens
-	keyword: pedine Tesoro
-	match: pedine Tesoro
-	mode: expert
-	reminder: Sono artefatti con "<sym-auto>T</sym-auto>, Sacrifica questo artefatto: Aggiungi un mana di un qualsiasi colore".
-	#example: An Offer You Can't Refuse
-
-keyword:
-	#english keyword: Treasure token
-	keyword: pedina Tesoro
-	match: pedina Tesoro
-	mode: expert
-	reminder: È un artefatto con "<sym-auto>T</sym-auto>, Sacrifica questo artefatto: Aggiungi un mana di un qualsiasi colore".
-	#example: Captain Lannery Storm
-
-keyword:
-	#english keyword: Gold tokens
-	keyword: pedine Oro
-	match: pedine Oro
-	mode: expert
-	reminder: Sono artefatti con "Sacrifica questo artefatto: Aggiungi un mana di un qualsiasi colore".
-	#example: Curse of Opulence
-
-keyword:
-	#english keyword: Gold token
-	keyword: pedina Oro
-	match: pedina Oro
-	mode: expert
-	reminder: È un artefatto con "Sacrifica questo artefatto: Aggiungi un mana di un qualsiasi colore".
-	#example: Curse of Opulence
-
-keyword:
-	#english keyword: Blood tokens
-	keyword: pedine Sangue
-	match: pedine Sangue
-	mode: expert
-	reminder: Sono artefatti con "<sym-auto>1</sym-auto>, <sym-auto>T</sym-auto>, Scarta una carta, Sacrifica questo artefatto: Pesca una carta".
-	#example: Grisly Ritual
-
-keyword:
-	#english keyword: Blood token
-	keyword: pedina Sangue
-	match: pedina Sangue
-	mode: expert
-	reminder: È un artefatto con "<sym-auto>1</sym-auto>, <sym-auto>T</sym-auto>, Scarta una carta, Sacrifica questo artefatto: Pesca una carta".
-	#example: Belligerent Guest
-
-keyword:
-	#english keyword: Powerstone tokens
-	keyword: pedine Pietra del Potere
-	match: pedine Pietra del Potere
-	mode: expert
-	reminder: Sono artefatti con "<sym-auto>T</sym-auto>: Aggiungi <sym-auto>C</sym-auto>. Questo mana non può essere speso per lanciare una magia non artefatto".
-	#example: Hall of Tagsin
-
-keyword:
-	#english keyword: Powerstone token
-	keyword: pedina Pietra del Potere
-	match: pedina Pietra del Potere
-	mode: expert
-	reminder: È un artefatto con "<sym-auto>T</sym-auto>: Aggiungi <sym-auto>C</sym-auto>. Questo mana non può essere speso per lanciare una magia non artefatto".
-	#example: Hall of Tagsin
-
-keyword:
-	#english keyword: Clue tokens
-	keyword: pedine Indizio
-	match: pedine Indizio
-	mode: expert
-	reminder: Sono artefatti con "<sym-auto>2</sym-auto>, Sacrifica questo artefatto: Pesca una carta”.
-	#example: Confront the Unknown
-
-keyword:
-	#english keyword: Clue token
-	keyword: pedina Indizio
-	match: pedina Indizio
-	mode: expert
-	reminder: È un artefatto con "<sym-auto>2</sym-auto>, Sacrifica questo artefatto: Pesca una carta”.
-	#example: Confront the Unknown
-
-keyword:
-	#english keyword: Food tokens
-	keyword: pedine Cibo
-	match: pedine Cibo
-	mode: expert
-	reminder: Sono artefatti con "<sym-auto>2</sym-auto>, <sym-auto>T</sym-auto>, Sacrifica questo artefatto: Guadagni 3 punti vita”.
-	#example: Bake into a Pie
-
-keyword:
-	#english keyword: Food token
-	keyword: pedina Cibo
-	match: pedina Cibo
-	mode: expert
-	reminder: È un artefatto con "<sym-auto>2</sym-auto>, <sym-auto>T</sym-auto>, Sacrifica questo artefatto: Guadagni 3 punti vita”.
-	#example: Bake into a Pie
-
-keyword:
-	#english keyword: Shard tokens
-	keyword: pedine Frammento
-	match: pedine Frammento
-	mode: expert
-	reminder: Sono incantesimi con “<sym-auto>2</sym-auto>, Sacrifica questo incantesimo: Profetizza 1, poi pesca una carta”.
-	#example: Niko Aris
-
-keyword:
-	#english keyword: Shard token
-	keyword: pedina Frammento
-	match: pedina Frammento
-	mode: expert
-	reminder: È un incantesimo con “<sym-auto>2</sym-auto>, Sacrifica questo incantesimo: Profetizza 1, poi pesca una carta”.
-	#example: Niko Aris
-
-keyword:
 	#english keyword: Craft
 	keyword: Costruisci
 	match: Costruisci con <atom-param>nome</atom-param> <atom-param>costo</atom-param>
 	mode: expert
 	reminder: {param2}, Esilia questo permanente, Esilia uno o più altri permanenti che controlli e/o carte dal tuo cimitero: Rimetti questa carta trasformata sotto il controllo del suo proprietario. Costruisci solo come una stregoneria.
 	#example: Sunbird Standard
-
-keyword:
-	#english keyword: stun counter
-	keyword: segnalino stordimento
-	match: segnalino stordimento
-	mode: expert
-	reminder: Se un permanente con un segnalino stordimento sta per essere STAPpato, rimuovi invece un segnalino stordimento da esso.
-	#example: Pugnacious Hammerskull
-
-keyword:
-	#english keyword: shield counter
-	keyword: segnalino scudo
-	match: segnalino scudo
-	mode: expert
-	reminder: Se una creatura con un segnalino scudo sta per subire danno o sta per essere distrutta, rimuovi invece un segnalino scudo da essa.
-	#example: Boon of Safety
 
 keyword:
 	#english keyword: finality counter
@@ -2543,13 +2378,6 @@ keyword:
 	#example: Reasonable Doubt
 	
 keyword:
-	#english keyword: To solve
-	keyword: Risolvere
-	match: Risolvere — <atom-param>nome</atom-param>
-	reminder: Se irrisolto, risolvilo all'inizio della tua sottofase finale.
-	#example: Case of the Crimson Pulse
-
-keyword:
 	#english keyword: Junk tokens
 	keyword: pedine Ferraglia
 	match: pedine Ferraglia
@@ -2564,6 +2392,7 @@ keyword:
 	mode: expert
 	reminder: È un artefatto con "<sym-auto>T</sym-auto>, Sacrifica questo artefatto: Esilia la prima carta del tuo grimorio. Puoi giocare quella carta in questo turno. Attiva solo come una stregoneria".
 	#example: Commander Sofia Daguerre
+<<<<<<< Updated upstream
 
 # Outlaws of Thunder Junction
 keyword:
@@ -2805,3 +2634,5 @@ keyword:
 	match: Livelli
 	mode: expert
 	reminder: Scegli un costo addizionale.
+=======
+>>>>>>> Stashed changes

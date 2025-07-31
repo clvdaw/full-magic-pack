@@ -171,7 +171,7 @@ keyword:
 	keyword: Indestructible
 	match: Indestructible
 	mode: core
-	reminder: El daño y los efectos que dicen "destruir" no destruyen a {if languages["Español"].is_creature(card.type) then "esta criatura" else "este permanente"}.{if languages["Español"].is_creature(card.type) then " Si su resistencia es 0 o menos, va al cementerio de su propietario igualmente." else ""}
+	reminder: El daño y los efectos que dicen "destruir" no destruyen a {if languages["Español"].is_creature(card.type) then "esta criatura" else "este permanente"}.{if languages["Español"].is_creature(card.type) then " Si su resistencia es </sym-auto>0<sym-auto> o menos, va al cementerio de su propietario igualmente." else ""}
 	#example: Seraph of the Suns
 
 keyword:
@@ -475,7 +475,7 @@ keyword:
 	keyword: Migración de almas
 	match: Migración de almas <atom-param>número</atom-param>
 	mode: expert
-	reminder: Cuando esto vaya a un cementerio desde el juego, puedes regresar la carta de Espíritu objetivo con valor de maná de {param1} o menos de tu cementerio a tu mano.
+	reminder: Cuando esto vaya a un cementerio desde el juego, puedes regresar la carta de Espíritu objetivo con coste de maná convertido de {param1} o menos de tu cementerio a tu mano.
 	#example: Thousand-legged Kami
 
 keyword:
@@ -547,7 +547,7 @@ keyword:
 	keyword: Transmutar
 	match: Transmutar <atom-param>coste</atom-param>
 	mode: expert
-	reminder: {param1}, descartar esta carta: Busca en tu biblioteca una carta con el mismo valor de maná que esta carta, muéstrala y ponla en tu mano. Luego baraja tu biblioteca. Juega esta habilidad sólo como un conjuro
+	reminder: {param1}, descartar esta carta: Busca en tu biblioteca una carta con el mismo coste de maná convertido que esta carta, muéstrala y ponla en tu mano. Luego baraja tu biblioteca. Juega esta habilidad sólo como un conjuro
 	#example: Clutch of the Undercity
 
 keyword:
@@ -675,7 +675,7 @@ keyword:
 	keyword: Transfigurar
 	match: Transfigurar <atom-param>coste</atom-param>
 	mode: expert
-	reminder: {param1}, sacrificar esta criatura: Busca en tu biblioteca una carta de criatura con el mismo valor de maná que esta criatura y pon esa carta en juego. Luego baraja tu biblioteca. Juega esta habilidad sólo como un conjuro
+	reminder: {param1}, sacrificar esta criatura: Busca en tu biblioteca una carta de criatura con el mismo coste de maná convertido que esta criatura y pon esa carta en juego. Luego baraja tu biblioteca. Juega esta habilidad sólo como un conjuro
 	#example: Fleshwrither
 
 keyword:
@@ -1075,16 +1075,8 @@ keyword:
 	keyword: Emerger
 	match: Emerger <atom-param>coste</atom-param>
 	mode: expert
-	reminder: Puedes lanzar este hechizo sacrificando una criatura y pagando el coste de emerger menos el valor de maná de esa criatura.
+	reminder: Puedes lanzar este hechizo sacrificando una criatura y pagando el coste de emerger menos el coste de maná convertido de esa criatura.
 	#example: It of the Horrid Swarm
-
-keyword:
-	#english keyword: Emerge from
-	keyword: Emerger desde
-	match: Emerger desde <atom-param>nombre</atom-param> <atom-param>coste</atom-param>
-	mode: expert
-	reminder: Puedes lanzar este hechizo sacrificando {if starts_vowel(param1.value) then "un" else "una"} {param1} y pagando el coste de emerger menos el valor de maná de ese {param1}.
-	#example: Crabomination
 
 keyword:
 	#english keyword: Escalate
@@ -1395,7 +1387,7 @@ keyword:
 	keyword: Voracidad
 	match: Voracidad
 	mode: expert
-	reminder: Esta criatura entra al campo de batalla con X contadores +1/+1 sobre ella. Si X es 5 o más, roba una carta cuando entre.
+	reminder: Esta criatura entra al campo de batalla con X contadores +1/+1 sobre ella. Si X es </sym-auto>5<sym-auto> o más, roba una carta cuando entre.
 	#example: Broodlord
 
 keyword:
@@ -1511,19 +1503,11 @@ keyword:
 	#example: Spin into Myth
 
 keyword:
-	#english keyword: Scry
-	keyword: Adivina
-	match: Adivina <atom-param>número</atom-param>
-	mode: action
-	reminder: {if param1.value == "1" then "Mira la primera carta de tu biblioteca. Puedes poner esa carta en el fondo de tu biblioteca." else ("Mira las {spanish_number(param1)} primeras cartas de tu biblioteca, luego pon cualquier número de ellas en el fondo de tu biblioteca y el resto en la parte superior en cualquier orden.")}
-	#example: Prism Array
-
-keyword:
 	#english keyword: Clash
 	keyword: Enfréntate
 	match: Enfréntate
 	mode: action
-	reminder: Cada jugador enfrentado muestra la primera carta de su biblioteca, luego pone esa carta en la parte superior o inferior. Gana el jugador cuya carta tenga el mayor valor de maná.
+	reminder: Cada jugador enfrentado muestra la primera carta de su biblioteca, luego pone esa carta en la parte superior o inferior. Gana el jugador cuya carta tenga el mayor coste de maná convertido.
 	#example: Fistful of Force
 
 keyword:
@@ -1663,14 +1647,6 @@ keyword:
 	#example: Deadeye Tracker
 
 keyword:
-	#english keyword: Connives
-	keyword: confabula
-	match: confabula
-	mode: expert
-	reminder: Roba una carta, luego descarta una carta. Si descartaste una carta que no sea tierra, pon un contador +1/+1 sobre esta criatura.
-	#example: Hypnotic Grifter
-
-keyword:
 	#english keyword: Historic
 	keyword: histórico
 	match: histórico
@@ -1755,8 +1731,8 @@ keyword:
 	keyword: Empujón
 	match: Empujón
 	mode: pseudo
-	rules: [coste], descartar esta carta: La criatura atacante objetivo obtiene +{card.power}/+{card.toughness} hasta el final del turno.
-	#example: Ghor-Clan Rampager
+	rules: 
+	#example: Rubblehulk
 
 keyword:
 	#english keyword: Channel
@@ -1827,8 +1803,8 @@ keyword:
 	keyword: Dominio
 	match: Dominio
 	mode: pseudo
-	rules: [efecto], donde X es el número de tipos de tierra básica que haya entre las tierras que controles.
-	#example: Territorial Kavu
+	rules: 
+	#example: Zar Ojanen, Scion of Efrava
 
 keyword:
 	#english keyword: Eminence
@@ -1859,16 +1835,16 @@ keyword:
 	keyword: Ferocidad
 	match: Ferocidad
 	mode: pseudo
-	rules: Si controlas una criatura con fuerza de 4 o más, [efecto].
-	#example: Barrage of Boulders
+	rules: 
+	#example: Flamewake Phoenix
 
 keyword:
 	#english keyword: Formidable
 	keyword: Formidable
 	match: Formidable
 	mode: pseudo
-	rules: Si las criaturas que controlas tienen una fuerza total de 8 o más, [efecto].
-	#example: Sabertooth Outrider
+	rules: 
+	#example: Dragon-Scarred Bear
 
 #keyword:
 #	#english keyword: Gotcha
@@ -1939,8 +1915,8 @@ keyword:
 	keyword: Hermandad
 	match: Hermandad
 	mode: pseudo
-	rules: Al comienzo de tu mantenimiento, puedes mirar la primera carta de tu biblioteca. Si comparte un tipo de criatura con CARDNAME, puedes mostrarla. Si lo haces, [efecto].
-	#example: Ink Dissolver
+	rules: 
+	#example: Nightshade Schemers
 
 keyword:
 	#english keyword: Landfall
@@ -1955,24 +1931,24 @@ keyword:
 	keyword: Teniente
 	match: Teniente
 	mode: pseudo
-	rules: Si controlas a tu comandante, [efecto].
-	#example: Loyal Guardian
+	rules: 
+	#example: Angelic Field Marshal
 
 keyword:
 	#english keyword: Magecraft
 	keyword: Hechicería
 	match: Hechicería
 	mode: pseudo
-	rules: Siempre que lances o copies un hechizo de instantáneo o de conjuro, [efecto].
-	#example: Clever Lumimancer
+	rules: 
+	#example: Prismari Pledgemage
 
 keyword:
 	#english keyword: Metalcraft
 	keyword: Metalurgia
 	match: Metalurgia
 	mode: pseudo
-	rules: Si controlas tres o más artefactos, [efecto].
-	#example: Vedalken Infiltrator
+	rules: 
+	#example: Spire Serpent
 
 keyword:
 	#english keyword: Morbid
@@ -2011,8 +1987,8 @@ keyword:
 	keyword: Incursión
 	match: Incursión
 	mode: pseudo
-	rules: Si atacaste con una criatura este turno, [efecto].
-	#example: Admiral's Order
+	rules: 
+	#example: Raiders' Wake
 
 keyword:
 	#english keyword: Rally
@@ -2075,8 +2051,8 @@ keyword:
 	keyword: Despojos
 	match: Despojos
 	mode: pseudo
-	rules: [efecto], donde X es la cantidad de cartas de criatura en tu cementerio.
-	#example: Hatchery Spider
+	rules: 
+	#example: Mausoleum Secrets
 
 keyword:
 	#english keyword: Will of the council
@@ -2085,14 +2061,6 @@ keyword:
 	mode: pseudo
 	rules: 
 	#example: Plea for Power
-
-keyword:
-	#english keyword: Corrupted
-	keyword: Corrupto
-	match: Corrupto
-	mode: pseudo
-	rules: Si un oponente tiene tres o más contadores de veneno, [efecto].
-	#example: Incisor Glider
 
 keyword:
 	#english keyword: Incubate
@@ -2255,140 +2223,12 @@ keyword:
 	#example: Fanatical Offering
 
 keyword:
-	#english keyword: Treasure tokens
-	keyword: fichas de Tesoro
-	match: fichas de Tesoro
-	mode: expert
-	reminder: Son artefactos con “<sym-auto>T</sym-auto>, sacrificar este artefacto: Agrega un maná de cualquier color”.
-	#example: An Offer You Can't Refuse
-
-keyword:
-	#english keyword: Treasure token
-	keyword: ficha de Tesoro
-	match: ficha de Tesoro
-	mode: expert
-	reminder: Es un artefacto con “<sym-auto>T</sym-auto>, sacrificar este artefacto: Agrega un maná de cualquier color”.
-	#example: Captain Lannery Storm
-
-keyword:
-	#english keyword: Gold tokens
-	keyword: fichas de Oro
-	match: fichas de Oro
-	mode: expert
-	reminder: Son artefactos con “Sacrificar este artefacto: Agrega un maná de cualquier color”.
-	#example: Curse of Opulence
-
-keyword:
-	#english keyword: Gold token
-	keyword: ficha de Oro
-	match: ficha de Oro
-	mode: expert
-	reminder: Es un artefacto con “Sacrificar este artefacto: Agrega un maná de cualquier color”.
-	#example: Curse of Opulence
-
-keyword:
-	#english keyword: Blood tokens
-	keyword: fichas de Sangre
-	match: fichas de Sangre
-	mode: expert
-	reminder: Son artefactos con “<sym-auto>1</sym-auto>, <sym-auto>T</sym-auto>, descartar una carta, sacrificar este artefacto: Roba una carta”.
-	#example: Grisly Ritual
-
-keyword:
-	#english keyword: Blood token
-	keyword: ficha de Sangre
-	match: ficha de Sangre
-	mode: expert
-	reminder: Es un artefacto con “<sym-auto>1</sym-auto>, <sym-auto>T</sym-auto>, descartar una carta, sacrificar este artefacto: Roba una carta”.
-	#example: Belligerent Guest
-
-keyword:
-	#english keyword: Powerstone tokens
-	keyword: fichas de Piedra de poder
-	match: fichas de Piedra de poder
-	mode: expert
-	reminder: Son artefactos con “<sym-auto>T</sym-auto>: Agrega <sym-auto>C</sym-auto>. Este maná no se puede usar para lanzar hechizos que no sean de artefacto”.
-	#example: Hall of Tagsin
-
-keyword:
-	#english keyword: Powerstone token
-	keyword: ficha de Piedra de poder
-	match: ficha de Piedra de poder
-	mode: expert
-	reminder: Es un artefacto con “<sym-auto>T</sym-auto>: Agrega <sym-auto>C</sym-auto>. Este maná no se puede usar para lanzar hechizos que no sean de artefacto”.
-	#example: Hall of Tagsin
-
-keyword:
-	#english keyword: Clue tokens
-	keyword: fichas de Pista
-	match: fichas de Pista
-	mode: expert
-	reminder: Son artefactos con “<sym-auto>2</sym-auto>, sacrificar este artefacto: Roba una carta”.
-	#example: Confront the Unknown
-
-keyword:
-	#english keyword: Clue token
-	keyword: ficha de Pista
-	match: ficha de Pista
-	mode: expert
-	reminder: Es un artefacto con “<sym-auto>2</sym-auto>, sacrificar este artefacto: Roba una carta”.
-	#example: Confront the Unknown
-
-keyword:
-	#english keyword: Food tokens
-	keyword: fichas de Comida
-	match: fichas de Comida
-	mode: expert
-	reminder: Son artefactos con “<sym-auto>2</sym-auto>, <sym-auto>T</sym-auto>, sacrificar este artefacto: Ganas 3 vidas”.
-	#example: Bake into a Pie
-
-keyword:
-	#english keyword: Food token
-	keyword: ficha de Comida
-	match: ficha de Comida
-	mode: expert
-	reminder: Es un artefacto con “<sym-auto>2</sym-auto>, <sym-auto>T</sym-auto>, sacrificar este artefacto: Ganas 3 vidas”.
-	#example: Bake into a Pie
-
-keyword:
-	#english keyword: Shard tokens
-	keyword: fichas de Fragmento
-	match: fichas de Fragmento
-	mode: expert
-	reminder: Son encantamientos con “<sym-auto>2</sym-auto>, sacrificar este encantamiento: Adivina 1, luego roba una carta”.
-	#example: Niko Aris
-
-keyword:
-	#english keyword: Shard token
-	keyword: ficha de Fragmento
-	match: ficha de Fragmento
-	mode: expert
-	reminder: Es un encantamiento con “<sym-auto>2</sym-auto>, sacrificar este encantamiento: Adivina 1, luego roba una carta”.
-	#example: Niko Aris
-
-keyword:
 	#english keyword: Craft
 	keyword: Elaborar
 	match: Elaborar con <atom-param>nombre</atom-param> <atom-param>coste</atom-param>
 	mode: expert
 	reminder: {param2}, exiliar este permanente, exiliar uno o más otros permanentes que controlas y/o cartas de tu cementerio: Regresa esta carta transformada bajo el control de su propietario. Activa la habilidad de elaborar solo como un conjuro.
 	#example: Sunbird Standard
-
-keyword:
-	#english keyword: stun counter
-	keyword: contador de aturdimiento
-	match: contador de aturdimiento
-	mode: expert
-	reminder: Si un permanente con un contador de aturdimiento fuera a enderezarse, en vez de eso, remueve uno de esos contadores de él.
-	#example: Pugnacious Hammerskull
-
-keyword:
-	#english keyword: shield counter
-	keyword: contador de escudo
-	match: contador de escudo
-	mode: expert
-	reminder: Si una criatura con un contador de escudo sobre ella fuera a recibir daño o a ser destruida, en vez de eso, remueve un contador de escudo de ella.
-	#example: Boon of Safety
 
 keyword:
 	#english keyword: finality counter
@@ -2439,13 +2279,6 @@ keyword:
 	#example: Reasonable Doubt
 	
 keyword:
-	#english keyword: To solve
-	keyword: Resolver
-	match: Resolver — <atom-param>nombre</atom-param>
-	reminder: Si el Caso no está resuelto, resuélvelo al comienzo de tu paso final.
-	#example: Case of the Crimson Pulse
-
-keyword:
 	#english keyword: Junk tokens
 	keyword: fichas de Residuo
 	match: fichas de Residuo
@@ -2460,6 +2293,7 @@ keyword:
 	mode: expert
 	reminder: Es un artefacto con "<sym-auto>T</sym-auto>, sacrificar este artefacto: Exilia la primera carta de tu biblioteca. Puedes jugar esa carta este turno. Activa esto solo como un conjuro".
 	#example: Commander Sofia Daguerre
+<<<<<<< Updated upstream
 
 # Outlaws of Thunder Junction
 keyword:
@@ -2711,3 +2545,5 @@ keyword:
 	match: Gradual
 	mode: expert
 	reminder: Elige un coste adicional.
+=======
+>>>>>>> Stashed changes

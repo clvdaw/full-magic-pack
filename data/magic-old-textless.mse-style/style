@@ -6,16 +6,13 @@ installer group: magic/old style/textless cards
 icon: card-sample.png
 position hint: 314
 
-version: 2024-05-29
+version: 2014-02-22
 depends on:
 	package: magic.mse-game
 	version: 2008-06-02
 depends on:
 	package: magic-mana-small.mse-symbol-font
 	version: 2007-09-23
-depends on:
-	package: magic-modules.mse-include
-	version: 2024-10-01
 
 card width: 375
 card height: 523
@@ -139,8 +136,6 @@ styling style:
 			yes: /magic-mana-small.mse-symbol-font/mana_guild_rg.png
 			no:  /magic-mana-small.mse-symbol-font/mana_rg.png
 ############################################################## Card fields
-include file: /magic-modules.mse-include/corners/card_fields
-include file: /magic-modules.mse-include/information/the_list_old
 card style:
 	############################# Background stuff
 	border color:
@@ -193,13 +188,14 @@ card style:
 		z index: 2
 		padding top: 0
 	card symbol:
-		left: 20
+		left: 24
 		top : 24
-		height: 21
-		width: 23
+		height: 20
+		width: 14
 		z index: 1
 		render style: image
-		image:				{ card_symbol_image(face: 1) }
+		choice images:
+			tombstone: tombstone.png
 	############################# Image
 	image:
 		left:	44
@@ -216,7 +212,30 @@ card style:
 		z index: 1
 		alignment: middle center
 		render style: image
-		include file: /magic-modules.mse-include/rarities/choice_images_old
+		choice images:
+			# Images based on the set symbol
+			basic land: script: symbol_variation(symbol: set.symbol, variation: "common")
+			common:     script: symbol_variation(symbol: set.symbol, variation: "common")
+			uncommon:
+				script:
+					if styling.colored_rarities
+					then symbol_variation(symbol: set.symbol, variation: "olduncommon")
+					else symbol_variation(symbol: set.symbol, variation: "common")
+			rare:
+				script:
+					if styling.colored_rarities
+					then symbol_variation(symbol: set.symbol, variation: "oldrare")
+					else symbol_variation(symbol: set.symbol, variation: "common")
+			mythic rare:
+				script:
+					if styling.colored_rarities
+					then symbol_variation(symbol: set.symbol, variation: "mythic rare")
+					else symbol_variation(symbol: set.symbol, variation: "common")
+			special:
+				script:
+					if styling.colored_rarities
+					then symbol_variation(symbol: set.symbol, variation: "special")
+					else symbol_variation(symbol: set.symbol, variation: "common")
 	############################# Textbox
 	############################# PT
 	pt:
@@ -274,6 +293,6 @@ extra card style:
 		top : 0
 		width: 375
 		height: 523
-		z index: 1050
+		z index: 3
 		render style: image
 		image: {if styling.overlay == "" then nil else styling.overlay + "/overlay.png"}

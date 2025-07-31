@@ -6,7 +6,7 @@ installer group: magic/new style/tokens
 icon: card-sample.png
 position hint: 204
 
-version: 2024-05-29
+version: 2014-02-22
 depends on:
 	package: magic.mse-game
 	version: 2008-06-02
@@ -20,8 +20,8 @@ depends on:
 	package: magic-embossedletters.mse-symbol-font
 	version: 2007-09-23
 depends on:
-	package: magic-modules.mse-include
-	version: 2024-10-01
+	package: magic-watermarks.mse-include
+	version: 2007-09-23
 
 card width: 375
 card height: 523
@@ -66,19 +66,7 @@ init script:
 	paintbrush_color := { if font_white() then "white" else "black" }
 	
 	card_shape := { "token" }
-	name_font_size := {
-		nl := length(card.name)-14
-		gv := to_number(styling.name_font_size)
-		if gv != 0
-			then gv
-		else if nl < 0
-			then 21
-		else if nl < 9
-			then 21 - nl
-		else
-			13
-	}
-	watermark_include := "/magic-modules.mse-include/watermarks"
+
 ############################################################## Set info fields
 set info style:
 	symbol:
@@ -89,10 +77,6 @@ set info style:
 			fill color:   rgb(255,255,255)
 			border color: rgb(0,0,0)
 ############################################################## Extra style
-styling field:
-	type: text
-	name: name font size
-	description: Override the font size for the token's name. Default is 21.
 styling field:
 	type: boolean
 	name: grey hybrid typeline
@@ -166,8 +150,6 @@ styling style:
 			no:  { symbol_variation(symbol: set.symbol, variation: "common") }
 			yes: { symbol_variation(symbol: set.symbol, variation: "invertedcommon") }
 ############################################################## Card fields
-include file: /magic-modules.mse-include/corners/card_fields
-include file: /magic-modules.mse-include/information/the_list_old
 card style:
 	############################# Background stuff
 	border color:
@@ -175,6 +157,7 @@ card style:
 		top : 0
 		width: 375
 		height: 523
+		radius: 18
 		left width:   17
 		right width:  17
 		top width:    17
@@ -191,18 +174,22 @@ card style:
 		image: { color_background(type:"card" + text_shape(), base_hybrid:card_hybrid) }
 	###################C######### Name line
 	name:
-		left: {max(50, 183.5 - 10*length(card.name))}
-		top: 25
-		width: {min(275, 6+20*length(card.name))}
+		left:
+			{ if card_style.name.content_width > 269 then 50
+			else card_style.name.content_width * -0.5 + 184.5 }
+		top: 23
+		width:
+			{ if card_style.name.content_width > 269 then 275
+			   else card_style.name.content_width + 6 }
 		height: 28
-		alignment: middle center
+		alignment: bottom center justify-all
 		padding bottom: -2
 		padding top: 2
 		z index: 2
 		symbol font:
 			name: magic-embossedletters
-			size: {name_font_size()}
-			alignment: bottom center justify-all
+			size: 22
+			alignment: bottom center
 		always symbol: true
 	############################# Image
 	image:
@@ -245,7 +232,20 @@ card style:
 		z index: 2
 		alignment: middle right
 		render style: image
-		include file: /magic-modules.mse-include/rarities/choice_images
+		choice images:
+			# Images based on the set symbol
+			basic land:
+				script:
+					if styling.inverted_common_symbol then symbol_variation(symbol: set.symbol, variation: "invertedcommon")
+					else symbol_variation(symbol: set.symbol, variation: "common")
+			common:
+				script:
+					if styling.inverted_common_symbol then symbol_variation(symbol: set.symbol, variation: "invertedcommon")
+					else symbol_variation(symbol: set.symbol, variation: "common")
+			uncommon:   script: symbol_variation(symbol: set.symbol, variation: "uncommon")
+			rare:       script: symbol_variation(symbol: set.symbol, variation: "rare")
+			mythic rare:       script: symbol_variation(symbol: set.symbol, variation: "mythic rare")
+			special:    script: symbol_variation(symbol: set.symbol, variation: "special")
 	############################# Text box
 	text:
 		left: 31
@@ -296,8 +296,7 @@ card style:
 		z index: 1
 		render style: image
 		alignment: middle center
-		include file:	/magic.mse-game/watermarks/menu_choice_images
-		image:			{ watermark_image_1() }
+		include file: /magic-watermarks.mse-include/watermarks
 	############################# PT
 	pt:
 		z index: 2
@@ -394,19 +393,26 @@ extra card style:
 		top : 0
 		width: 375
 		height: 523
-		z index: 1050
+		z index: 3
 		render style: image
 		image: {if styling.overlay == "" then nil else styling.overlay + "/overlay.png"}
 	name box:
-		left: {max(50, 183.5 - 10*length(card.name))}
+		left:
+			{ if card_style.name.content_width > 275 then 50
+			   else card_style.name.content_width * -0.5 + 185.5 }
 		top: 26
-		width: {min(275, 6+20*length(card.name))}
+		width:
+			{ if card_style.name.content_width > 275 then 275
+			   else card_style.name.content_width + 3}
 		height: 35
 		z index: 1
+		visible: { card.name != "" }
 		render style: image
 		image: name-mid.png
 	name box left:
-		right: {max(50, 183.5 - 10*length(card.name))}
+		right:
+			{ if card_style.name.content_width > 275 then 50
+			   else card_style.name.content_width * -0.5 + 185.5 }
 		top: 26
 		width: 15
 		height: 35
@@ -414,7 +420,9 @@ extra card style:
 		render style: image
 		image: name-left.png
 	name box right:
-		left: {min(325, 189.5 + 10*length(card.name))}
+		left:
+			{ if card_style.name.content_width > 275 then 325
+			   else card_style.name.content_width * 0.5 + 187.5 }
 		top: 26
 		width: 14
 		height: 35

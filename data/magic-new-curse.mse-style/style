@@ -6,7 +6,7 @@ icon: card-sample.png
 installer group: magic/new style/curse cards
 position hint: 904
 
-version: 2024-05-29
+version: 2014-02-22
 depends on:
 	package: magic.mse-game
 	version: 2008-06-02
@@ -14,8 +14,8 @@ depends on:
 	package: magic-default-image.mse-include
 	version: 2007-09-23
 depends on:
-	package: magic-modules.mse-include
-	version: 2024-10-01
+	package: magic-watermarks.mse-include
+	version: 2007-09-29
 depends on:
 	package: magic-mana-large.mse-symbol-font
 	version: 2007-10-12
@@ -197,29 +197,17 @@ init script:
 			replace: { _1 + to_upper(_2) }) +
 		curly_quotes +
 		# step 9 : spellcheck
-		{
-			if set.auto_correct then
-				auto_correct(input)
-			else input
-		} +
-		{
-			if set.auto_errata then
-				auto_errata(input)
-			else input
-		} +
-		{
-			if language().code == "ja" or language().code == "zht" or language().code == "zhs" then input
-			else if set.mark_errors then
+		{ if set.mark_errors then
 			check_spelling(
 				language: language().spellcheck_code,
-				extra_dictionary: "/magic.mse-game/dictionary/magic-words",
+				extra_dictionary: "/magic.mse-game/magic-words",
 				extra_match: additional_text_words
 			)
-			else input
+		  else input
 		}
 	
 	card_shape := {"flip"}
-	watermark_include := "/magic-modules.mse-include/watermarks"
+	
 ############################################################## Set info fields
 set info style:
 	symbol:
@@ -287,8 +275,6 @@ styling style:
 			old:        /magic-mana-large.mse-symbol-font/mana_t_old.png
 			diagonal T: /magic-mana-large.mse-symbol-font/mana_t_older.png
 ############################################################## Card fields
-include file: /magic-modules.mse-include/corners/card_fields
-include file: /magic-modules.mse-include/information/the_list_old
 card style:
 	############################# Background stuff
 	border color:
@@ -349,13 +335,14 @@ card style:
 		z index: 2
 		padding top: 0
 	card symbol:
-		left: {if card.card_symbol=="none" then 20 else 28}
+		left: {if card.card_symbol=="none" then 20 else 32}
 		top : 31
-		height: 21
-		width: 23
+		height: 20
+		width: 14
 		z index: 1
 		render style: image
-		image:				{ card_symbol_image(face: 1) }
+		choice images:
+			tombstone: tombstone.png
 	############################# Image
 	image:
 		right:	32
@@ -400,7 +387,20 @@ card style:
 		render style: image
 		alignment: middle right
 		render style: image
-		include file: /magic-modules.mse-include/rarities/choice_images
+		choice images:
+			# Images based on the set symbol
+			basic land:
+				script:
+					if styling.inverted_common_symbol then symbol_variation(symbol: set.symbol, variation: "invertedcommon")
+					else symbol_variation(symbol: set.symbol, variation: "common")
+			common:
+				script:
+					if styling.inverted_common_symbol then symbol_variation(symbol: set.symbol, variation: "invertedcommon")
+					else symbol_variation(symbol: set.symbol, variation: "common")
+			uncommon:   script: symbol_variation(symbol: set.symbol, variation: "uncommon")
+			rare:       script: symbol_variation(symbol: set.symbol, variation: "rare")
+			mythic rare:       script: symbol_variation(symbol: set.symbol, variation: "mythic rare")
+			special:    script: symbol_variation(symbol: set.symbol, variation: "special")
 	rarity 2:
 		right: 30
 		bottom: 292
@@ -410,7 +410,20 @@ card style:
 		alignment: middle right
 		angle: 180
 		render style: image
-		include file: /magic-modules.mse-include/rarities/choice_images
+		choice images:
+			# Images based on the set symbol
+			basic land:
+				script:
+					if styling.inverted_common_symbol then symbol_variation(symbol: set.symbol, variation: "invertedcommon")
+					else symbol_variation(symbol: set.symbol, variation: "common")
+			common:
+				script:
+					if styling.inverted_common_symbol then symbol_variation(symbol: set.symbol, variation: "invertedcommon")
+					else symbol_variation(symbol: set.symbol, variation: "common")
+			uncommon:   script: symbol_variation(symbol: set.symbol, variation: "uncommon")
+			rare:       script: symbol_variation(symbol: set.symbol, variation: "rare")
+			mythic rare:       script: symbol_variation(symbol: set.symbol, variation: "mythic rare")
+			special:    script: symbol_variation(symbol: set.symbol, variation: "special")
 	############################# Text box
 	text:
 		left: 33
@@ -483,8 +496,8 @@ card style:
 		angle: 180
 		z index: 1
 		render style: image
-		include file:	/magic.mse-game/watermarks/menu_choice_images
-		image:			{ watermark_image_1() }
+		alignment: middle center
+		include file: /magic-watermarks.mse-include/watermarks
 	############################# PT
 	pt:
 		z index: 2

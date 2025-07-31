@@ -1,10 +1,10 @@
 ﻿mse version: 2.0.0
 short name: Simple Exporter
 full name: Simple
-position hint: 410
+position hint: 009
 icon: icon.png
 version: 2018-01-11
-installer group: magic/Export/text
+installer group: magic/Export/Name Check
 
 depends on:
 	package: magic.mse-game
