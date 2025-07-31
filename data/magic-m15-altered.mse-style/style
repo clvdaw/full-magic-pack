@@ -130,6 +130,7 @@ init script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	
 	#### template images
 	#### base template
@@ -382,6 +383,8 @@ init script:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 	# Is the card a promo card?
 	is_promo := { styling.promo }
 	is_stamped := {styling.use_holofoil_stamps and (card.rarity ==  "rare" or card.rarity == "mythic rare")}
@@ -419,6 +422,9 @@ init script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -791,8 +797,12 @@ styling field:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	choice: popunder art
 	initial: avoid covering devoid, auto vehicles, auto snow, auto nyx crowns, auto ub
+=======
+	initial: auto nyx crowns, auto vehicles, auto snow
+>>>>>>> Stashed changes
 =======
 	initial: auto nyx crowns, auto vehicles, auto snow
 >>>>>>> Stashed changes
@@ -1091,6 +1101,7 @@ card style:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		left: 	{if comma_count(styling.popout_image_style) == ",,,," then split_text(match:",", styling.popout_image_style).0 else 0}
 		top: 	{if comma_count(styling.popout_image_style) == ",,,," then split_text(match:",", styling.popout_image_style).1 else 0}
 		width: 	{if contains(styling.other_options, match:"popunder art") then 0 else if comma_count(styling.popout_image_style) == ",,,," then split_text(match:",", styling.popout_image_style).2 else 0}
@@ -1103,6 +1114,8 @@ card style:
 		height: {if comma_count(styling.popout_image_style) == ",,,," then split_text(match:",", styling.popout_image_style).3 else 0}
 		z index: 899
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -1132,6 +1145,9 @@ card style:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1271,9 +1287,12 @@ card style:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		top: { if is_dka() and is_mutate() then 359 else if is_mutate() then 329 else top_of_textbox() }
 		right: { if is_leveler() then (if lone_pt() or card.pt == "" then 342 else 287) else if is_mutate() then 342 else if is_map() then 40 else 29}
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -1520,9 +1539,12 @@ card style:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		z index: 900
 		left: {if is_leveler() and not lone_pt() then 301 else 286}
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -1566,11 +1588,14 @@ card style:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		z index: 900
 		left: 301
 		top: {(l2_center() - 12)+(if is_map() then -1 else 0)+(pt_font_vertical())}
 		width: {if is_leveler() and not lone_pt() or card.pt_2 != "" then 50 else 0}
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -1613,11 +1638,14 @@ card style:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		z index: 900
 		left: 301
 		top: {(l3_center() - 12)+(if is_map() then -1 else 0)+(pt_font_vertical())}
 		width: {if is_leveler() and not lone_pt() or card.pt_3 != "" then 50 else 0}
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -1660,11 +1688,14 @@ card style:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		z index: 900
 		left: 301
 		top: {(l4_center() - 12)+(if is_map() then -1 else 0)+(pt_font_vertical())}
 		width: {if is_leveler() and not lone_pt() or card.pt_7 != "" then 50 else 0}
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -2159,7 +2190,11 @@ extra card style:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		left: { if is_leveler() and not lone_pt() then 288 else if is_map() then 270 else 273 }
+=======
+		left: { if is_leveler() and not lone_pt() then 278 else if is_map() then 270 else 273}
+>>>>>>> Stashed changes
 =======
 		left: { if is_leveler() and not lone_pt() then 278 else if is_map() then 270 else 273}
 >>>>>>> Stashed changes
@@ -2639,7 +2674,11 @@ extra card style:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		z index: 810
+=======
+		z index: 7
+>>>>>>> Stashed changes
 =======
 		z index: 7
 >>>>>>> Stashed changes

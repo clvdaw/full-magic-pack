@@ -21,6 +21,7 @@ horizontal space: 2
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 symbol:
 	code: T
 	image: tap_older.png
@@ -29,6 +30,8 @@ symbol:
 	code: T
 	image: tap_old.png
 	enabled: { mana_t() == "old" }
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======

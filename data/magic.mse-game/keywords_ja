@@ -2224,6 +2224,7 @@ keyword:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	#example: Commander Sofia Daguerre
 	
 # Outlaws of Thunder Junction
@@ -2444,6 +2445,9 @@ keyword:
 	mode: pseudo
 	rules: 相続 — [cost], Exile this card from your graveyard: [effect].
 
+=======
+	#example: Commander Sofia Daguerre
+>>>>>>> Stashed changes
 =======
 	#example: Commander Sofia Daguerre
 >>>>>>> Stashed changes

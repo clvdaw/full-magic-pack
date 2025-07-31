@@ -1836,6 +1836,7 @@ keyword:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	reminder: You may cast this spell for its freerunning cost if you dealt combat damage to a player this turn with an Assassin or commander.
 # Outlaws of Thunder Junction
 keyword:
@@ -2014,6 +2015,9 @@ keyword:
 	match: Tiered
 	mode: expert
 	reminder: Choose one additional cost.
+=======
+	reminder: You may cast this spell for its freerunning cost if you dealt combat damage to a player this turn with an Assassin or commander.
+>>>>>>> Stashed changes
 =======
 	reminder: You may cast this spell for its freerunning cost if you dealt combat damage to a player this turn with an Assassin or commander.
 >>>>>>> Stashed changes

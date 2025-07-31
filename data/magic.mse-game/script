@@ -13,6 +13,7 @@ include file: /magic-blends.mse-include/new-blends
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ############################################################## Versioning
 version_date := {"2025-02-01 Template Pack 3.1.c: Mainframe Battles - isfront Face Code"}
 version := version_date
@@ -433,6 +434,9 @@ include file: statistics_script
 =======
 include file: statistics_script
 >>>>>>> Stashed changes
+=======
+include file: statistics_script
+>>>>>>> Stashed changes
 
 ############################################################## version check
 version_date := {"2023-02-21"}
@@ -451,9 +455,14 @@ mana_sort_wedge := sort_text@(order: "\\?XYZI[0123456789]VLHSFCAIE(WBGUR)")
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #### sort nothing
 mana_unsort := sort_text@(order:"[/\\?XYZI0123456789VLHSCAIEOPKMWUBRG]")
 #### correctly sort guild mana
+=======
+mana_unsort := sort_text@(order:"[/\\?XYZI0123456789VLHSCAIEWUBRG]")
+# correctly sort guild mana
+>>>>>>> Stashed changes
 =======
 mana_unsort := sort_text@(order:"[/\\?XYZI0123456789VLHSCAIEWUBRG]")
 # correctly sort guild mana
@@ -549,6 +558,7 @@ mana_filter_t := replace@(               # Remove [] used for forcing mana symbo
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 card_is_wedge := {
 	color_string := card_color_to_letters(input)
@@ -601,6 +611,8 @@ use_hybrid_v_mana := { use_v_mana() and chosen(set.mana_symbol_options, choice:"
 v_mana_name := {if not use_v_mana() then "" else replace(set.custom_mana_symbol_name, match:"(.+/|\\.png)", replace:"")}
 v_mana_loc := {if not use_v_mana() then "" else replace(set.custom_mana_symbol_name, match:"{v_mana_name()}\\.png", replace:"")}
 v_mana_num := {max(to_number(set.number_hybrid_variants),0) or else -1}
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -1411,6 +1423,7 @@ auto_correct :=
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	+replace@(
 		match: "([^ ]: |—| — )"            #### preceded by this
 		     + "([[:lower:]])"             #### match this
@@ -1418,6 +1431,8 @@ auto_correct :=
 		replace: { _1 + to_upper(_2) })
 
 #### Automatically apply errata
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -1585,6 +1600,7 @@ text_filter :=
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	) +
 	#### step 3b : expand shortcut word AUTOREM
 	replace@(
@@ -1623,6 +1639,14 @@ text_filter :=
 		match:"^<atom-(card|print)name><nospellcheck>this",
 		replace:"<atom-\\1name><nospellcheck>This"
 	) +
+=======
+		) +
+	# step 3c : fill in atom fields
+	tag_contents@(
+		tag: "<atom-cardname>",
+		contents: { "<nospellcheck>" + (if card_name=="" then "CARDNAME" else strip_card_codes(card_name)) + "</nospellcheck>" }
+		) +
+>>>>>>> Stashed changes
 =======
 		) +
 	# step 3c : fill in atom fields
@@ -1765,6 +1789,7 @@ text_filter :=
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	} +
 	#### step 8 : automatic capitalization, but not after "("
 	#replace@(
@@ -1774,6 +1799,8 @@ text_filter :=
 	#	replace: { _1 + to_upper(_2) }) +
 	#### step 9 : spellcheck
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -1806,6 +1833,9 @@ text_filter :=
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1842,6 +1872,7 @@ text_filter :=
 	  else input
 	}
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -1938,6 +1969,10 @@ remove_margins := replace@(
 #### remove 0 margins and margins with no text
 cull_margins := replace@(match:"</?margin:0(:+0)?(:+0)?>", replace:"")+
 	replace@(match:"<margin:[0-9]+:?[0-9]*:?[0-9]*></margin:[0-9]+:?[0-9]*:?[0-9]*>", replace:"")
+=======
+modal_lines := replace@(match:"</?soft-line>", replace:"")
+	+replace@(match:"(.+)", replace:"<soft-line>\\1</soft-line>")
+>>>>>>> Stashed changes
 =======
 modal_lines := replace@(match:"</?soft-line>", replace:"")
 	+replace@(match:"(.+)", replace:"<soft-line>\\1</soft-line>")
@@ -2963,6 +2998,7 @@ name_checker := {if not set.remove_card_codes then input else strip_card_codes(i
 
 face_code := {
 	face := ""
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -4191,6 +4227,8 @@ stamp_behavior_checks := [
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 	if margin_code == "text2" or margin_code == "lv5" or margin_code == "lv6" or margin_code == "lv7" or margin_code == "lv8" then face := "_2"
 	output := face_scripts[input](face) or else if_parse(input, face:face) or else input
 	output
@@ -4217,6 +4255,9 @@ face_scripts := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -4240,6 +4281,7 @@ face_scripts := [
 	cost: {card["casting_cost"+face]},
 	altname: {card["name"+flip_face(face)]},
 	altcost: {card["casting_cost"+flip_face(face)]},
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -4593,6 +4635,32 @@ if_scripts := {
 }
 
 >>>>>>> Stashed changes
+=======
+]
+expand_facecodes := [
+	subtype: "sub_type",
+	castingcost: "casting_cost",
+	manacost: "casting_cost"
+]
+if_parse := replace@(
+	match: "if_(.*)_then_(.*)_else_(.*)",
+	replace: {if_scripts(_1, t:_2, f:_3)}
+)
+if_scripts := {
+	contCheck := split_text(input, match:"_")
+	func := contCheck[0]
+	field := ""
+	query := "^$"
+	if length(contCheck) == 3 then (
+		field := contCheck[0]
+		func := contCheck[1]
+		query := contCheck[2]
+	)
+	field := expand_facecodes[field] or else field
+	if face_scripts[func](face, field:field, query:query) or else false then t else f
+}
+
+>>>>>>> Stashed changes
 white_text := {false}
 phy_reminder := {
 	phy_match := filter_text(input, match:"(/[WUBRG])+", in_context:"H<match>")
@@ -4613,6 +4681,9 @@ phy_reminder := {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -4639,6 +4710,7 @@ rare_width := {
 	if card_style.rarity.width == 0 then 0 else cw
 }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -4734,6 +4806,10 @@ swap_font := {false} ##{styling.apply_custom_fonts}
 ### Customize fonts
 swap_font := {false} ##{styling.apply_custom_fonts}
 >>>>>>> Stashed changes
+=======
+### Customize fonts
+swap_font := {false} ##{styling.apply_custom_fonts}
+>>>>>>> Stashed changes
 split_font := split_text@(match:";")
 pop_font_name := {split_font(input).0 or else ""}
 pop_font_size := {split_font(input).1 or else ""}
@@ -4789,6 +4865,7 @@ swap_font_italic := {
 	)
 	
 	font_name
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -5418,6 +5495,13 @@ use_main_rarity := { has_png(mainframe_rarity_string()) }
 mainframe_rarity := {"/magic-mainframe-extras.mse-include/" + un_png(mainframe_rarity_string()) + input + ".png"}
 alt_rarity := { styling.alt_rarity_color or else "" }
 use_alt_rarity := { alt_rarity() != "" }
+=======
+}@(font_name:"", src:"")
+
+#### Customize rarity symbol
+alt_rarity := {""} ##{styling.alt_rarity_color}
+use_alt_rarity := {alt_rarity() != ""}
+>>>>>>> Stashed changes
 =======
 }@(font_name:"", src:"")
 
