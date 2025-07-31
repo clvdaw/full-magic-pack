@@ -2079,10 +2079,21 @@ word list:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 				word:
 					script: lang_setting("word_lists_race").10
 			word:
 				name: 여 - 유
+=======
+				word:
+					script: lang_setting("word_lists_race").9
+			word:
+				name: 여 - 유
+				word:
+					script: lang_setting("word_lists_race").10
+			word:
+				name: 이 - ᄋᄒ
+>>>>>>> Stashed changes
 =======
 				word:
 					script: lang_setting("word_lists_race").9
@@ -2212,7 +2223,10 @@ word list:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -2241,6 +2255,9 @@ word list:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -2695,6 +2712,7 @@ word list:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			name: 哈-宁
 			word:
 				script: lang_setting("word_lists_race").2
@@ -2742,6 +2760,51 @@ word list:
 			name: 鳄-龟
 			word:
 				script: lang_setting("word_lists_race").13
+=======
+			name: 四-家
+			word:
+				script: lang_setting("word_lists_race").2
+		word:
+			name: 寇-惊
+			word:
+				script: lang_setting("word_lists_race").3
+		word:
+			name: 拉-植
+			word:
+				script: lang_setting("word_lists_race").4
+		word:
+			name: 欧-熊
+			word:
+				script: lang_setting("word_lists_race").5
+		word:
+			name: 牛-獾
+			word:
+				script: lang_setting("word_lists_race").6
+		word:
+			name: 病-精
+			word:
+				script: lang_setting("word_lists_race").7
+		word:
+			name: 索-虚
+			word:
+				script: lang_setting("word_lists_race").8
+		word:
+			name: 虫-裂
+			word:
+				script: lang_setting("word_lists_race").9
+		word:
+			name: 触-非
+			word:
+				script: lang_setting("word_lists_race").10
+		word:
+			name: 章-魔
+			word:
+				script: lang_setting("word_lists_race").11
+		word:
+			name: 鱼-龟
+			word:
+				script: lang_setting("word_lists_race").12
+>>>>>>> Stashed changes
 =======
 			name: 四-家
 			word:
@@ -3287,6 +3350,7 @@ word list:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			name: 殭-熊
 			word:
 				script: lang_setting("word_lists_race").5
@@ -3320,6 +3384,41 @@ word list:
 				script: lang_setting("word_lists_race").12
 		word:
 			name: 鳳-龜
+=======
+			name: 水-牛
+			word:
+				script: lang_setting("word_lists_race").5
+		word:
+			name: 牡-真
+			word:
+				script: lang_setting("word_lists_race").6
+		word:
+			name: 眼-細
+			word:
+				script: lang_setting("word_lists_race").7
+		word:
+			name: 組-虫
+			word:
+				script: lang_setting("word_lists_race").8
+		word:
+			name: 蛇-觸
+			word:
+				script: lang_setting("word_lists_race").9
+		word:
+			name: 變-雪
+			word:
+				script: lang_setting("word_lists_race").10
+		word:
+			name: 非-鬼
+			word:
+				script: lang_setting("word_lists_race").11
+		word:
+			name: 魔-鼴
+			word:
+				script: lang_setting("word_lists_race").12
+		word:
+			name: 龍-龜
+>>>>>>> Stashed changes
 =======
 			name: 水-牛
 			word:
