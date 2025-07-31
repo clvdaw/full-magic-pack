@@ -729,8 +729,11 @@ keyword:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	reminder: Quand ce permanent arrive sur le champ de bataille, sacrifiez-le à moins que vous n'exiliez un/une autre {param2} que vous contrôlez. Quand ce permanent quitte le champ de bataille, la carte exilée revient sur le champ de bataille.
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -760,6 +763,9 @@ keyword:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -2385,6 +2391,7 @@ keyword:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	#english keyword: To solve
 	keyword: À résoudre
 	match: À résoudre — <atom-param>nom</atom-param>
@@ -2392,6 +2399,8 @@ keyword:
 	#example: Case of the Crimson Pulse
 
 keyword:
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -2416,6 +2425,7 @@ keyword:
 	mode: expert
 	reminder: C'est un artefact avec « <sym-auto>T</sym-auto>, sacrifiez cet artefact : Exilez la carte du dessus de votre bibliothèque. Vous pouvez jouer cette carte ce tour-ci. N'activez que lorsque vous pourriez lancer un rituel. »
 	#example: Commander Sofia Daguerre
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -2667,6 +2677,8 @@ keyword:
 	mode: expert
 	reminder: Choisissez un coût supplémentaire.
 	#example: Fire Magic
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======

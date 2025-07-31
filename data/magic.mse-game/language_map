@@ -1224,6 +1224,9 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1926,8 +1929,11 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "Mofeta,"
 			+ "Moguri,"
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -6875,6 +6881,7 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "宁芙",
 
 			  "害獸,"
@@ -6882,6 +6889,13 @@ languages := [
 			+ "家鼠,"
 			+ "密封件,"
 			+ "寇族,"
+=======
+			+ "宁芙,"
+			+ "害虫,"
+			+ "家鼠",
+
+			  "寇族,"
+>>>>>>> Stashed changes
 =======
 			+ "宁芙,"
 			+ "害虫,"
@@ -6938,8 +6952,14 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "惊惧兽,"
 			+ "拉弥亚,"
+=======
+			+ "惊惧兽",
+
+			  "拉弥亚,"
+>>>>>>> Stashed changes
 =======
 			+ "惊惧兽",
 
@@ -6986,8 +7006,14 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "植物,"
 			+ "欧格,"
+=======
+			+ "植物",
+
+			  "欧格,"
+>>>>>>> Stashed changes
 =======
 			+ "植物",
 
@@ -7033,8 +7059,14 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "熊,"
 			+ "牛,"
+=======
+			+ "熊",
+
+			  "牛,"
+>>>>>>> Stashed changes
 =======
 			+ "熊",
 
@@ -7081,9 +7113,15 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "獾,"
 			+ "玩具,"
 			+ "病媒,"
+=======
+			+ "獾",
+
+			  "病媒,"
+>>>>>>> Stashed changes
 =======
 			+ "獾",
 
@@ -7147,7 +7185,10 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "臭鼬,"
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -7190,10 +7231,14 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "豺狼人",
 
 			  "负鼠,"
 			+ "轻灵,"
+=======
+			+ "豺狼人,"
+>>>>>>> Stashed changes
 =======
 			+ "豺狼人,"
 >>>>>>> Stashed changes
@@ -7254,7 +7299,10 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "黄鼠狼,"
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -7844,12 +7892,21 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "熊",
 
 			  "牆,"
 			+ "牛,"
 			+ "牛頭怪,"
 			+ "牡蠣,"
+=======
+			+ "熊,"
+			+ "牆,"
+			+ "牛,"
+			+ "牛頭怪",
+
+			  "牡蠣,"
+>>>>>>> Stashed changes
 =======
 			+ "熊,"
 			+ "牆,"
@@ -7906,9 +7963,13 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "獾",
 
 			  "玩具,"
+=======
+			+ "獾,"
+>>>>>>> Stashed changes
 =======
 			+ "獾,"
 >>>>>>> Stashed changes
@@ -7944,6 +8005,7 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "精靈",
 
 			  "索泰利,"
@@ -7951,6 +8013,15 @@ languages := [
 			+ "紫貂,"
 			+ "細菌,"
 			+ "組構體,"
+=======
+			+ "精靈,"
+			+ "索泰利,"
+			+ "索爾獸,"
+			+ "紫貂,"
+			+ "細菌",
+
+			  "組構體,"
+>>>>>>> Stashed changes
 =======
 			+ "精靈,"
 			+ "索泰利,"
@@ -8012,9 +8083,13 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "臭鼬",
 
 			  "苏拉卡,"
+=======
+			+ "苏拉卡,"
+>>>>>>> Stashed changes
 =======
 			+ "苏拉卡,"
 >>>>>>> Stashed changes
@@ -8051,6 +8126,7 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "蟹",
 
 			  "蠍子,"
@@ -8058,6 +8134,16 @@ languages := [
 			+ "袋熊,"
 			+ "裂片妖,"
 			+ "觸手,"
+=======
+			+ "蟹,"
+			+ "蠍子,"
+			+ "蠕蟲,"
+			+ "袋熊,"
+			+ "裂片妖,"
+			+ "觸手",
+
+			  "變形獸,"
+>>>>>>> Stashed changes
 =======
 			+ "蟹,"
 			+ "蠍子,"
@@ -8121,9 +8207,13 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "道西",
 
 			  "郊狼,"
+=======
+			+ "道西,"
+>>>>>>> Stashed changes
 =======
 			+ "道西,"
 >>>>>>> Stashed changes
@@ -8160,10 +8250,16 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "骆驼",
 
 			  "駿鷹,"
 			+ "驚懼獸,"
+=======
+			+ "駿鷹,"
+			+ "驚懼獸,"
+			+ "骆驼,"
+>>>>>>> Stashed changes
 =======
 			+ "駿鷹,"
 			+ "驚懼獸,"
@@ -8209,9 +8305,14 @@ languages := [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			+ "鳥",
 
 			  "鳳凰,"
+=======
+			+ "鳥,"
+			+ "鳳凰,"
+>>>>>>> Stashed changes
 =======
 			+ "鳥,"
 			+ "鳳凰,"
