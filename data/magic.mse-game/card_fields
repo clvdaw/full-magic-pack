@@ -14,6 +14,7 @@ card field:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	card list name: Shape
 	card list column: 1610
 	card list width: 110
@@ -59,6 +60,8 @@ card field:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 	choice: normal
 	choice: token
 	choice: flip
@@ -87,6 +90,9 @@ card field:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -112,6 +118,9 @@ card field:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1424,6 +1433,7 @@ card field:
 	name: time created
 	show statistics: false
 	save value: false
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -1474,11 +1484,14 @@ card field:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 	script: card.time_created
 card field:
 	type: text
 	name: chapter text
 	show statistics: false
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -2804,6 +2817,8 @@ card field:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 	multi line: true
 	script: text_filter(input: value, card_name: if set.alias_as_cardname and card.alias_2 != "" then card.alias_2 else card.name, margin_code:"unknown")
 	default: if not a_saga() then "" else if card.rule_text != "" then card.rule_text else "<i-auto>(" + saga_reminder() + ")</i-auto>"
@@ -2834,6 +2849,9 @@ card field:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
