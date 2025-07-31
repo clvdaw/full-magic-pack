@@ -124,6 +124,7 @@ init script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	swap_fonts_name_default := [
 		name: {
 			if is_archetype() then "Gotham Medium"
@@ -186,6 +187,8 @@ init script:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 	swap_font := {styling.apply_custom_fonts}
 	name_font := {
 		swap_font_name(
@@ -198,6 +201,9 @@ init script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -898,12 +904,15 @@ extra card field:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	type: choice
 	name: custom overlay
 	script: card.card_color
 	save value: false
 	editable: false
 extra card field:
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -1084,6 +1093,7 @@ extra card style:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	custom overlay:
 		left: 15
 		top: 15
@@ -1094,6 +1104,8 @@ extra card style:
 		image: {custom_border_blend()}
 		mask: {"v_" + (if is_nyx() or is_snow() then "nyx_" else "") + if is_tall() then "tall_mask.png" else if is_textless() then "short_mask.png" else "mid_mask.png"}
 		visible: { is_custom_border() }
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======

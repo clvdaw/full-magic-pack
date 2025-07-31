@@ -7,8 +7,13 @@ short name: Cockatrice
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 full name: Exporter v2.2
 position hint: 100
+=======
+full name: Exporter v2.0
+position hint: 007
+>>>>>>> Stashed changes
 =======
 full name: Exporter v2.0
 position hint: 007
@@ -141,9 +146,13 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		replace@(match:"\\.", replace:"")+ #remove periods
 		replace@(match:"\"", replace:"")+ #remove quotes
 		remove_tags
+=======
+		replace@(match:"\\.", replace:"") #remove periods
+>>>>>>> Stashed changes
 =======
 		replace@(match:"\\.", replace:"") #remove periods
 >>>>>>> Stashed changes
@@ -971,6 +980,7 @@ script:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		sts := card.stylesheet
 		if sts == nil then sts := set.stylesheet
 		if sts != nil and length(sts.card_regions) > 0 then write_multi_image()
@@ -983,6 +993,8 @@ script:
 		+ "." + file_type()
 	}
 	write_single_image := {
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
