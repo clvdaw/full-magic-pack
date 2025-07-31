@@ -588,6 +588,7 @@ card style:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	casting cost 3:
 		right: {page_coords[page_3_side()]["cost"]}
 		top: { if is_spot() then 330 else if page_3_flat() then 328 else 329}
@@ -606,6 +607,8 @@ card style:
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 	card symbol:
 		left: {if card.card_symbol=="none" then 20 else 30}
 		top: 29
@@ -617,6 +620,9 @@ card style:
 			tombstone: tombstone.png
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
