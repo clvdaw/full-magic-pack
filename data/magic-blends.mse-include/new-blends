@@ -847,11 +847,14 @@ color_background := {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	colors := blend_colors(input,land:land, multi:multi, hybrid:hybrid, artifact:artifact)
 	if contains(colors, match:"a") then artifact := false
 	if contains(colors, match:"m") then multi := false
 	color_count := if colors == "c" then 0 else number_of_items(in: colors)
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -890,6 +893,9 @@ color_background := {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -913,6 +919,7 @@ color_background := {
 	         else								"radial"
 	
 	# Determine background (allows styles to hook something else here)
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -1086,6 +1093,12 @@ color_combination := {
 
 color_combination := {
 >>>>>>> Stashed changes
+=======
+	color_combination(folder:folder)
+}@(folder: "")
+
+color_combination := {
+>>>>>>> Stashed changes
 	# The base hybrid, without the outer frame blended over it
 	base := base_hybrid[shape][color_count]()
 	# Put a frame around it?
@@ -1164,6 +1177,7 @@ color_combination := {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 
 conditional_masked_blend :=
@@ -1180,6 +1194,8 @@ conditional_masked_blend :=
 			light:	light(light_input),
 	)
 }
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -1340,6 +1356,7 @@ spotlight_watermark_blend := {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 }@(alpha:0.5)
 
 glow_watermark_blend := {
@@ -1398,6 +1415,9 @@ watermark_blend :=
 	else if invert_base_image then set_alpha(alpha: alpha, invert_image(input))
 	else set_alpha(alpha: alpha, input)
 }@(h:500,l:500,colored:false,face:1,alpha:0.25,spotlight_alpha:0.75,dark_alpha:0.25,dark_spotlight_alpha:0.35,custom:false)
+=======
+}@(h:500,l:500,face:false)
+>>>>>>> Stashed changes
 =======
 }@(h:500,l:500,face:false)
 >>>>>>> Stashed changes
