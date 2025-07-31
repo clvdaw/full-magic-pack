@@ -2295,6 +2295,7 @@ keyword:
 	#example: Commander Sofia Daguerre
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 # Outlaws of Thunder Junction
 keyword:
@@ -2546,6 +2547,8 @@ keyword:
 	match: Gradual
 	mode: expert
 	reminder: Elige un coste adicional.
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
