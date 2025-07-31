@@ -2396,6 +2396,7 @@ keyword:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 # Outlaws of Thunder Junction
 keyword:
@@ -2637,6 +2638,8 @@ keyword:
 	match: Livelli
 	mode: expert
 	reminder: Scegli un costo addizionale.
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======

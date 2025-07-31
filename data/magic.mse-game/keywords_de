@@ -2269,6 +2269,7 @@ keyword:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 # Outlaws of Thunder Junction
 keyword:
 	#english keyword: commit a crime
@@ -2517,6 +2518,8 @@ keyword:
 	match: Stufenmagie
 	mode: expert
 	reminder: Bestimme eine der zusätzlichen Kostenoptionen.
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
